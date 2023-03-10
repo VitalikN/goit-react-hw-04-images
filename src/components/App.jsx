@@ -20,8 +20,8 @@ export const App = () => {
   const [tag, setTag] = useState(null);
 
   useEffect(() => {
+    if (!searchQuery) return;
     const imgGalleryList = async (searchQuery, page) => {
-      if (!searchQuery) return;
       setIsLoader(true);
       try {
         const { hits, totalHits } = await fetchGallery(searchQuery, page);
