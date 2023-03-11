@@ -55,14 +55,16 @@ export const App = () => {
   const handleSubmit = nameSearch => {
     if (searchQuery !== nameSearch) {
       setSearchQuery(nameSearch);
-      setImageGallery([]);
-      setIsVisible(false);
-      setIsLoader(false);
-      setPage(1);
-      setIsEmpty(false);
-      setError(null);
     }
   };
+  useEffect(() => {
+    setImageGallery([]);
+    setIsVisible(false);
+    setIsLoader(false);
+    setPage(1);
+    setIsEmpty(false);
+    setError(null);
+  }, [searchQuery]);
 
   return (
     <Container>
