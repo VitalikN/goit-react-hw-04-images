@@ -53,13 +53,15 @@ export const App = () => {
     setTag(alt);
   };
   const handleSubmit = nameSearch => {
-    setSearchQuery(nameSearch);
-    setImageGallery([]);
-    setIsVisible(false);
-    setIsLoader(false);
-    setPage(1);
-    setIsEmpty(false);
-    setError(null);
+    if (searchQuery !== nameSearch) {
+      setSearchQuery(nameSearch);
+      setImageGallery([]);
+      setIsVisible(false);
+      setIsLoader(false);
+      setPage(1);
+      setIsEmpty(false);
+      setError(null);
+    }
   };
 
   return (
